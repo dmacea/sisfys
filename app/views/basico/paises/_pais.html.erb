@@ -1,0 +1,9 @@
+ 
+<tr>
+    <td><%= pais.nombre %></td>
+    <td><%= pais.codigo %></td>
+    <td><%= link_to 'Mostrar', pais %></td>
+    <td><%= link_to 'Editar', edit_basico_pais_path(pais) %></td>
+    <td><%= link_to 'Eliminar', pais, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+ 

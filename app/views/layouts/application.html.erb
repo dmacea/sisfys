@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sisfys</title>
+  <title>Sisf&s</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body> 
 
-<%= yield %>
+	<div style="margin-top:20px; " class="container-fluid">
+		<div class="col-md-8">
+			<h1 style="">Sistema de Gestion de Seguridad. </h1>
+		</div> 
+		<div class="col-md-4"  align="right">
+             <div class="btn-group" style="margin-top:0px;">
+             </div>
+		</div>
+	</div>
 
+	<div class="container-fluid" style="margin-top:20px; height:70px;">
+		<div class="col-ms-2 col-md-2">
+			 <div class="panel panel-default">
+			  <div class="panel-body"><%= menu %> </div>
+			</div>
+ 		</div>
+		<div class="col-ms-10 col-md-10 ">
+			 <div class="panel panel-default">
+			  <div class="panel-body"><%= yield %></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" style="margin-top:20px; height:70px;">
+		<div class="col-ms-12 col-md-12">
+			<div class="panel panel-default">
+		  		<div class="panel-body">  </div>
+			</div>
+		</div>
+	</div>
+ 
 </body>
 </html>

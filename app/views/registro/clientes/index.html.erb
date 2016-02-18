@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Registro Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personajuridica</th>
+      <th>Identidad</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Direccion</th>
+      <th>Parroquia</th>
+      <th>Email</th>
+      <th>Pin</th>
+      <th>Web</th>
+      <th>Tiwtter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registro_clientes.each do |registro_cliente| %>
+      <tr>
+        <td><%= registro_cliente.personaJuridica %></td>
+        <td><%= registro_cliente.identidad %></td>
+        <td><%= registro_cliente.nombres %></td>
+        <td><%= registro_cliente.apellidos %></td>
+        <td><%= registro_cliente.direccion %></td>
+        <td><%= registro_cliente.parroquia %></td>
+        <td><%= registro_cliente.email %></td>
+        <td><%= registro_cliente.pin %></td>
+        <td><%= registro_cliente.web %></td>
+        <td><%= registro_cliente.tiwtter %></td>
+        <td><%= link_to 'Show', registro_cliente %></td>
+        <td><%= link_to 'Edit', edit_registro_cliente_path(registro_cliente) %></td>
+        <td><%= link_to 'Destroy', registro_cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cliente', new_registro_cliente_path %>

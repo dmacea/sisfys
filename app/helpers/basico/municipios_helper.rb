@@ -1,0 +1,2 @@
+module Basico::MunicipiosHelper
+end

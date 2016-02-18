@@ -45,3 +45,35 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'will_paginate', '~> 3.0.6'
+
+gem 'will_paginate-bootstrap'
+
+gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'jquery-turbolinks' 
+
+gem 'bootstrap-datepicker-rails'
+
+gem 'devise'
+
+gem 'cancan'
+
+gem 'pg' 
+
+gem 'select2-rails'
+
+gem 'composite_primary_keys','=8.0'
+
+gem 'prawn'
+
+gem 'prawn-table'
+
+gem 'prawn_rails'
+
+gem 'foreigner' 
+
+ 

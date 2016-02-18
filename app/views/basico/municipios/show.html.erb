@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @basico_municipio.nombre %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @basico_municipio.estado %>
+</p>
+
+<%= link_to 'Edit', edit_basico_municipio_path(@basico_municipio) %> |
+<%= link_to 'Back', basico_municipios_path %>

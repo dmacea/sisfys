@@ -1,0 +1,2 @@
+module Basico::PersonaJuridicasHelper
+end

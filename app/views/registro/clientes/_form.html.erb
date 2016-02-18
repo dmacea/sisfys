@@ -1,0 +1,57 @@
+<%= form_for(@registro_cliente) do |f| %>
+  <% if @registro_cliente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registro_cliente.errors.count, "error") %> prohibited this registro_cliente from being saved:</h2>
+
+      <ul>
+      <% @registro_cliente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :personaJuridica_id %><br>
+    <%= f.text_field :personaJuridica_id %>
+  </div>
+  <div class="field">
+    <%= f.label :identidad %><br>
+    <%= f.text_field :identidad %>
+  </div>
+  <div class="field">
+    <%= f.label :nombres %><br>
+    <%= f.text_field :nombres %>
+  </div>
+  <div class="field">
+    <%= f.label :apellidos %><br>
+    <%= f.text_field :apellidos %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :parroquia_id %><br>
+    <%= f.text_field :parroquia_id %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :pin %><br>
+    <%= f.text_field :pin %>
+  </div>
+  <div class="field">
+    <%= f.label :web %><br>
+    <%= f.text_field :web %>
+  </div>
+  <div class="field">
+    <%= f.label :tiwtter %><br>
+    <%= f.text_field :tiwtter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

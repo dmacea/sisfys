@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Basico Persona Juridicas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Tipo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @basico_persona_juridicas.each do |basico_persona_juridica| %>
+      <tr>
+        <td><%= basico_persona_juridica.descripcion %></td>
+        <td><%= basico_persona_juridica.tipo %></td>
+        <td><%= link_to 'Show', basico_persona_juridica %></td>
+        <td><%= link_to 'Edit', edit_basico_persona_juridica_path(basico_persona_juridica) %></td>
+        <td><%= link_to 'Destroy', basico_persona_juridica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Persona juridica', new_basico_persona_juridica_path %>

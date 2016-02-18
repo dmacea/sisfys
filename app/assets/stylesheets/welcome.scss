@@ -1,0 +1,16 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//$font-size-base: 11px;
+//$table-cell-padding: 4px;
+//$panel-heading-padding: 5px 15px;
+//$panel-footer-bg:#cf010e;
+//$panel-default-heading-bg:#cf010e;
+//$brand-primary: darken(#cf010e, 6.5%);
+$grid-gutter-width:30px;
+$container-desktop: (1220px + $grid-gutter-width);
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

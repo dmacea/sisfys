@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personajuridica:</strong>
+  <%= @registro_cliente.personaJuridica %>
+</p>
+
+<p>
+  <strong>Identidad:</strong>
+  <%= @registro_cliente.identidad %>
+</p>
+
+<p>
+  <strong>Nombres:</strong>
+  <%= @registro_cliente.nombres %>
+</p>
+
+<p>
+  <strong>Apellidos:</strong>
+  <%= @registro_cliente.apellidos %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @registro_cliente.direccion %>
+</p>
+
+<p>
+  <strong>Parroquia:</strong>
+  <%= @registro_cliente.parroquia %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @registro_cliente.email %>
+</p>
+
+<p>
+  <strong>Pin:</strong>
+  <%= @registro_cliente.pin %>
+</p>
+
+<p>
+  <strong>Web:</strong>
+  <%= @registro_cliente.web %>
+</p>
+
+<p>
+  <strong>Tiwtter:</strong>
+  <%= @registro_cliente.tiwtter %>
+</p>
+
+<%= link_to 'Edit', edit_registro_cliente_path(@registro_cliente) %> |
+<%= link_to 'Back', registro_clientes_path %>

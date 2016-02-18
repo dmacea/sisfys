@@ -1,0 +1,8 @@
+<tr>
+    <td><%= estado.nombre %></td>
+    <td><%= estado.codigo %></td>
+    <td><%= estado.pais.nombre.capitalize %></td>
+    <td><%= link_to 'Show', estado %></td>
+    <td><%= link_to 'Edit', edit_basico_estado_path(estado) %></td>
+    <td><%= link_to 'Destroy', estado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
