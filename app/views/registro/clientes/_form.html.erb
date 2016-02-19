@@ -1,57 +1,98 @@
-<%= form_for(@registro_cliente) do |f| %>
-  <% if @registro_cliente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@registro_cliente.errors.count, "error") %> prohibited this registro_cliente from being saved:</h2>
-
+ 
+<%= form_for(@cliente, html: {class:'form-horizontal', role:'form',id:"formulario"}) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <ul>
-      <% @registro_cliente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @cliente.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :personaJuridica_id %><br>
-    <%= f.text_field :personaJuridica_id %>
+<div class="list-group">
+
+  <div class="list-group-item">
+    <h4 class="page-header2">Datos Personales </h4>
+    <div class="form-group form-group-sm">
+      <%= f.label :identidad, class:"col-md-1 control-label" %>
+      <div class="col-md-3">
+        <%= f.text_field :identidad, class: "form-control input-sm" , placeholder:"V-0000000" %>
+      </div>
+      <%=f.label :nombres,class:"col-md-1 control-label" %>
+      <div class="col-md-5">
+        <%= f.text_field :nombres, class: "form-control input-sm", rows:"4", placeholder:" nombre apellido ó razon social "  %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :identidad %><br>
-    <%= f.text_field :identidad %>
+
+  <div class="list-group-item">
+    <h4 class="page-header2">Direccíon</h4>
+    <div class="form-group form-group-sm">
+      <%= label_tag :pais_id,:Pais,class:"col-md-1 control-label" %>
+      <div class="col-md-3">
+        <%= select_tag "cliente[pais_id]",opciones_estados(@clinte),html_options={class: "form-control input-sm", data: { }, required: "required"} %>
+      </div>  
+
+      <%= label_tag :estado_id,:Estado,class:"col-md-1 control-label" %>
+      <div class="col-md-3">
+        <%= select_tag "cliente[estado_id]",opciones_estados(@clinte),html_options={class: "form-control input-sm", data: { }, required: "required"} %>
+      </div>  
+
+      <%=f.label :parroquia,class:"col-md-1 control-label" %>
+      <div class="col-md-3">
+        <%= f.select :parroquia_id,opciones_parroquias(@cliente.parroquia), {}, {class: "form-control input-sm",required: "required" } %>
+      </div> 
+    </div>
+
+    <div class="form-group form-group-sm">
+    <%= f.label :direccion, class:"col-md-1 control-label" %>
+    <div class="col-md-7">
+       <%= f.text_area :direccion, class: "form-control input-sm" %>
+    </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :nombres %><br>
-    <%= f.text_field :nombres %>
+
+  <div class="list-group-item">
+      <h4 class="page-header2">Redes Sociales </h4>
+      <div class="form-group form-group-sm">
+      <%= f.label :email, class:"col-md-1 control-label" %>
+      <div class="col-md-3">
+         <%= f.text_field :email, class: "form-control input-sm",placeholder:"nombre@correo.com" %>
+      </div>
+      <%=f.label :twitter,class:"col-md-1 control-label" %>
+       <div class="col-md-3">
+        <%= f.text_field :twitter, class: "form-control input-sm", rows:"4"  %>
+      </div>
+      <%=f.label :ping,class:"col-md-1 control-label" %>
+       <div class="col-md-3">
+        <%= f.text_field :ping, class: "form-control input-sm", rows:"4"  %>
+      </div>
+    </div>
+    <div class="form-group form-group-sm">
+      <%= f.label :web, class:"col-md-1 control-label" %>
+      <div class="col-md-6">
+         <%= f.text_field :web, class: "form-control input-sm", placeholder:"www.direcion.com" %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :apellidos %><br>
-    <%= f.text_field :apellidos %>
+
+  <div class="list-group-item">
+    <div class="form-group form-group-sm">
+      <div class="col-md-1 col-md-offset-10" align="right">
+        <%= submit_tag "Guardar" , class: "btn btn-primary btn-sm"  %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    <%= f.text_field :direccion %>
-  </div>
-  <div class="field">
-    <%= f.label :parroquia_id %><br>
-    <%= f.text_field :parroquia_id %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :pin %><br>
-    <%= f.text_field :pin %>
-  </div>
-  <div class="field">
-    <%= f.label :web %><br>
-    <%= f.text_field :web %>
-  </div>
-  <div class="field">
-    <%= f.label :tiwtter %><br>
-    <%= f.text_field :tiwtter %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+ 
 <% end %>
+
+
+  
+
+ 
+

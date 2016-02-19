@@ -1,10 +1,10 @@
 class Registro::ClientesController < ApplicationController
   before_action :set_registro_cliente, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /registro/clientes
   # GET /registro/clientes.json
   def index
-    @registro_clientes = Registro::Cliente.all
+    @clientes = Registro::Cliente.search(params[:page], params[:search], params[:sort])
   end
 
   # GET /registro/clientes/1
@@ -14,7 +14,7 @@ class Registro::ClientesController < ApplicationController
 
   # GET /registro/clientes/new
   def new
-    @registro_cliente = Registro::Cliente.new
+    @cliente = Registro::Cliente.new
   end
 
   # GET /registro/clientes/1/edit
@@ -24,15 +24,15 @@ class Registro::ClientesController < ApplicationController
   # POST /registro/clientes
   # POST /registro/clientes.json
   def create
-    @registro_cliente = Registro::Cliente.new(registro_cliente_params)
+    @cliente = Registro::Cliente.new(registro_cliente_params)
 
     respond_to do |format|
-      if @registro_cliente.save
-        format.html { redirect_to @registro_cliente, notice: 'Cliente was successfully created.' }
-        format.json { render :show, status: :created, location: @registro_cliente }
+      if @cliente.save
+        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
+        format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }
-        format.json { render json: @registro_cliente.errors, status: :unprocessable_entity }
+        format.json { render json: @cliente.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +69,6 @@ class Registro::ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registro_cliente_params
-      params.require(:registro_cliente).permit(:personaJuridica_id, :identidad, :nombres, :apellidos, :direccion, :parroquia_id, :email, :pin, :web, :tiwtter)
+      params.require(:cliente).permit(:tipoIdentidad_id, :identidad, :nombres, :direccion, :parroquia_id, :email, :ping, :web, :twitter)
     end
 end

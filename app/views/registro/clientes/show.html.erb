@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Personajuridica:</strong>
-  <%= @registro_cliente.personaJuridica %>
+  <strong>Tipoidentidad:</strong>
+  <%= @registro_cliente.tipoIdentidad %>
 </p>
 
 <p>
@@ -13,11 +13,6 @@
 <p>
   <strong>Nombres:</strong>
   <%= @registro_cliente.nombres %>
-</p>
-
-<p>
-  <strong>Apellidos:</strong>
-  <%= @registro_cliente.apellidos %>
 </p>
 
 <p>
@@ -36,8 +31,8 @@
 </p>
 
 <p>
-  <strong>Pin:</strong>
-  <%= @registro_cliente.pin %>
+  <strong>Ping:</strong>
+  <%= @registro_cliente.ping %>
 </p>
 
 <p>
@@ -46,8 +41,33 @@
 </p>
 
 <p>
-  <strong>Tiwtter:</strong>
-  <%= @registro_cliente.tiwtter %>
+  <strong>Twitter:</strong>
+  <%= @registro_cliente.twitter %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @registro_cliente.telefono %>
+</p>
+
+<p>
+  <strong>Otrotelefono:</strong>
+  <%= @registro_cliente.otroTelefono %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @registro_cliente.celular %>
+</p>
+
+<p>
+  <strong>Otrocelular:</strong>
+  <%= @registro_cliente.otroCelular %>
+</p>
+
+<p>
+  <strong>Otroemail:</strong>
+  <%= @registro_cliente.otroEmail %>
 </p>
 
 <%= link_to 'Edit', edit_registro_cliente_path(@registro_cliente) %> |

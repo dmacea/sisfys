@@ -18,7 +18,7 @@ class Registro::ClientesControllerTest < ActionController::TestCase
 
   test "should create registro_cliente" do
     assert_difference('Registro::Cliente.count') do
-      post :create, registro_cliente: { apellidos: @registro_cliente.apellidos, direccion: @registro_cliente.direccion, email: @registro_cliente.email, identidad: @registro_cliente.identidad, nombres: @registro_cliente.nombres, parroquia_id: @registro_cliente.parroquia_id, personaJuridica_id: @registro_cliente.personaJuridica_id, pin: @registro_cliente.pin, tiwtter: @registro_cliente.tiwtter, web: @registro_cliente.web }
+      post :create, registro_cliente: { celular: @registro_cliente.celular, direccion: @registro_cliente.direccion, email: @registro_cliente.email, identidad: @registro_cliente.identidad, nombres: @registro_cliente.nombres, otroCelular: @registro_cliente.otroCelular, otroEmail: @registro_cliente.otroEmail, otroTelefono: @registro_cliente.otroTelefono, parroquia_id: @registro_cliente.parroquia_id, ping: @registro_cliente.ping, telefono: @registro_cliente.telefono, tipoIdentidad_id: @registro_cliente.tipoIdentidad_id, twitter: @registro_cliente.twitter, web: @registro_cliente.web }
     end
 
     assert_redirected_to registro_cliente_path(assigns(:registro_cliente))
@@ -35,7 +35,7 @@ class Registro::ClientesControllerTest < ActionController::TestCase
   end
 
   test "should update registro_cliente" do
-    patch :update, id: @registro_cliente, registro_cliente: { apellidos: @registro_cliente.apellidos, direccion: @registro_cliente.direccion, email: @registro_cliente.email, identidad: @registro_cliente.identidad, nombres: @registro_cliente.nombres, parroquia_id: @registro_cliente.parroquia_id, personaJuridica_id: @registro_cliente.personaJuridica_id, pin: @registro_cliente.pin, tiwtter: @registro_cliente.tiwtter, web: @registro_cliente.web }
+    patch :update, id: @registro_cliente, registro_cliente: { celular: @registro_cliente.celular, direccion: @registro_cliente.direccion, email: @registro_cliente.email, identidad: @registro_cliente.identidad, nombres: @registro_cliente.nombres, otroCelular: @registro_cliente.otroCelular, otroEmail: @registro_cliente.otroEmail, otroTelefono: @registro_cliente.otroTelefono, parroquia_id: @registro_cliente.parroquia_id, ping: @registro_cliente.ping, telefono: @registro_cliente.telefono, tipoIdentidad_id: @registro_cliente.tipoIdentidad_id, twitter: @registro_cliente.twitter, web: @registro_cliente.web }
     assert_redirected_to registro_cliente_path(assigns(:registro_cliente))
   end
 

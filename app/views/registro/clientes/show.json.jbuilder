@@ -1,1 +1,1 @@
-json.extract! @registro_cliente, :id, :personaJuridica_id, :identidad, :nombres, :apellidos, :direccion, :parroquia_id, :email, :pin, :web, :tiwtter, :created_at, :updated_at
+json.extract! @registro_cliente, :id, :tipoIdentidad_id, :identidad, :nombres, :direccion, :parroquia_id, :email, :ping, :web, :twitter, :telefono, :otroTelefono, :celular, :otroCelular, :otroEmail, :created_at, :updated_at

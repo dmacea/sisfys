@@ -40,7 +40,7 @@ module ApplicationHelper
 				elementos.append nav_link("Personas Juridicas ",basico_persona_juridicas_path,"personaJuridicas")
 			end 
 			registro = sub_menu "Registro" do |elementos|
-				elementos.append nav_link("Cliente",basico_paises_path,"paises")
+				elementos.append nav_link("Clientes",registro_clientes_path,"clientes")
 			end 
 			nav.append(basico)
 			nav.append(registro)

@@ -1,25 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  personaJuridica_id: 
+  tipoIdentidad_id: 
   identidad: MyString
   nombres: MyString
-  apellidos: MyString
   direccion: MyString
   parroquia_id: 
   email: MyString
-  pin: MyString
+  ping: MyString
   web: MyString
-  tiwtter: MyString
+  twitter: MyString
+  telefono: MyString
+  otroTelefono: MyString
+  celular: MyString
+  otroCelular: MyString
+  otroEmail: MyString
 
 two:
-  personaJuridica_id: 
+  tipoIdentidad_id: 
   identidad: MyString
   nombres: MyString
-  apellidos: MyString
   direccion: MyString
   parroquia_id: 
   email: MyString
-  pin: MyString
+  ping: MyString
   web: MyString
-  tiwtter: MyString
+  twitter: MyString
+  telefono: MyString
+  otroTelefono: MyString
+  celular: MyString
+  otroCelular: MyString
+  otroEmail: MyString

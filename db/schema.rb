@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218211854) do
+ActiveRecord::Schema.define(version: 20160219161529) do
 
   create_table "basico_estados", force: :cascade do |t|
     t.string   "nombre",     limit: 30
@@ -56,21 +56,25 @@ ActiveRecord::Schema.define(version: 20160218211854) do
   end
 
   create_table "registro_clientes", force: :cascade do |t|
-    t.integer  "personaJuridica_id"
-    t.string   "identidad",          limit: 10
-    t.string   "nombres",            limit: 60
-    t.string   "apellidos",          limit: 60
-    t.string   "direccion",          limit: 450
+    t.integer  "tipoIdentidad_id"
+    t.string   "identidad",        limit: 16
+    t.string   "nombres",          limit: 180
+    t.string   "direccion",        limit: 400
     t.integer  "parroquia_id"
-    t.string   "email",              limit: 50
-    t.string   "pin",                limit: 20
-    t.string   "web",                limit: 300
-    t.string   "tiwtter",            limit: 50
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "email",            limit: 35
+    t.string   "ping",             limit: 20
+    t.string   "web",              limit: 200
+    t.string   "twitter",          limit: 70
+    t.string   "telefono",         limit: 15
+    t.string   "otroTelefono",     limit: 15
+    t.string   "celular",          limit: 15
+    t.string   "otroCelular",      limit: 15
+    t.string   "otroEmail",        limit: 35
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "registro_clientes", ["parroquia_id"], name: "index_registro_clientes_on_parroquia_id"
-  add_index "registro_clientes", ["personaJuridica_id"], name: "index_registro_clientes_on_personaJuridica_id"
+  add_index "registro_clientes", ["tipoIdentidad_id"], name: "index_registro_clientes_on_tipoIdentidad_id"
 
 end
