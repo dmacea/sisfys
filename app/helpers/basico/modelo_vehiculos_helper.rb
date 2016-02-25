@@ -1,0 +1,5 @@
+module Basico::ModeloVehiculosHelper
+
+
+
+end

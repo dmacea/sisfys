@@ -1,6 +1,19 @@
-<h1>Editing Basico Persona Juridica</h1>
+ 
+ 
+<div class="row">
+	<div class="col-md-4"  >
+	<%= link_to 'Mostrar', @basico_persona_juridica, class: "btn btn-default btn-sm" %>
+	<%= link_to 'listado', basico_persona_juridicas_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+<h3>Persona Juridica<small> editar </small></h3>
 
-<%= render 'form' %>
+<div> 
+	<%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @basico_persona_juridica %> |
-<%= link_to 'Back', basico_persona_juridicas_path %>
+
+
+

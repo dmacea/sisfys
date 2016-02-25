@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Operadora:</strong>
+  <%= @registro_linea.operadora %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @registro_linea.serial %>
+</p>
+
+<p>
+  <strong>Codigopin:</strong>
+  <%= @registro_linea.codigoPin %>
+</p>
+
+<p>
+  <strong>Codigopunk:</strong>
+  <%= @registro_linea.codigoPunk %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @registro_linea.numero %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @registro_linea.plan %>
+</p>
+
+<p>
+  <strong>Fechacorte:</strong>
+  <%= @registro_linea.diaCorte %>
+</p>
+
+<%= link_to 'Edit', edit_registro_linea_path(@registro_linea) %> |
+<%= link_to 'Back', registro_lineas_path %>

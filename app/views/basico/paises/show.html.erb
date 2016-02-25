@@ -13,9 +13,27 @@
 <h3>Paises<small> detalle </small></h3>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @basico_pais.nombre %>
-  <strong>Codigo:</strong>
-  <%= @basico_pais.codigo %>
-</p>
+
+<div class="well">
+<div class="row">
+	<div class="col-md-6">
+		<p>
+		  <strong>Nombre:</strong>
+		  <%= @basico_pais.nombre %>
+ 		</p>
+ 		<p>
+		  <strong>Codigo:</strong>
+		  <%= @basico_pais.codigo %>
+		</p>
+	</div>
+	<div class="col-md-6">
+		<ul class="list-group">
+			<% @basico_pais.estados.each do |estado| %>	
+				<li class="list-group-item"><%= estado.nombre %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+</div>
+
+

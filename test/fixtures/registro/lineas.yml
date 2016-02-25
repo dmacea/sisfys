@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  operadora_id: 
+  serial: MyString
+  codigoPin: MyString
+  codigoPunk: MyString
+  numero: MyString
+  plan_id: 
+  fechaCorte: 2016-02-22
+
+two:
+  operadora_id: 
+  serial: MyString
+  codigoPin: MyString
+  codigoPunk: MyString
+  numero: MyString
+  plan_id: 
+  fechaCorte: 2016-02-22

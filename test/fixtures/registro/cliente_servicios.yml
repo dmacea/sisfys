@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 
+  servicio_id: 
+  dispositivo_id: 
+  pagaPlan: false
+  fechaInicio_id: 
+  estado: MyString
+
+two:
+  cliente_id: 
+  servicio_id: 
+  dispositivo_id: 
+  pagaPlan: false
+  fechaInicio_id: 
+  estado: MyString

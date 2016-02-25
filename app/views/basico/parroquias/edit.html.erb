@@ -1,6 +1,20 @@
-<h1>Editing Basico Parroquia</h1>
+ 
 
-<%= render 'form' %>
+ 
+<div class="row">
+	<div class="col-md-4"  >
+	<%= link_to 'Mostrar', @basico_parroquia, class: "btn btn-default btn-sm" %>
+	<%= link_to 'listado', basico_parroquias_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+<h3>Parroquias<small> editar </small></h3>
 
-<%= link_to 'Show', @basico_parroquia %> |
-<%= link_to 'Back', basico_parroquias_path %>
+<div> 
+	<%= render 'form' %>
+</div>
+
+
+
+

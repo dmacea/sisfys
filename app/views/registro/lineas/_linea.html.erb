@@ -1,0 +1,10 @@
+  <tr>
+        <td><%= linea.operadora %></td>
+        <td><%= linea.serial %></td>
+        <td><%= linea.numero %></td>
+        <td><%= linea.plan %></td>
+        <td><%= linea.diaCorte %></td>
+        <td><%= link_to 'Show', linea %></td>
+        <td><%= link_to 'Edit', edit_registro_linea_path(linea) %></td>
+        <td><%= link_to 'Destroy', linea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

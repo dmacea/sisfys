@@ -1,14 +1,46 @@
+
+ 
+
+<div class="row">
+	<div class="col-md-4"  >
+	 <%= link_to 'Editar', edit_basico_parroquia_path(@basico_parroquia),class: "btn btn-default btn-sm" %> 
+	 <%= link_to 'Listado', basico_parroquias_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+
+<h3>Parroquias<small> detalle </small></h3>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @basico_parroquia.nombre %>
-</p>
 
-<p>
-  <strong>Municipio:</strong>
-  <%= @basico_parroquia.municipio %>
-</p>
+<div class="well">
+<div class="row">
+	<div class="col-md-6">
+		<p>
+		  <strong>Nombre:</strong>
+		  <%= @basico_parroquia.nombre %>
+		</p>
+		<p>
+		  <strong>Pais :</strong>
+		  <%= @basico_parroquia.municipio.estado.pais.nombre %>
+		</p>
+		<p>
+		  <strong>Estado :</strong>
+		  <%= @basico_parroquia.municipio.estado.nombre %>
+		</p>
+		<p>
+		  <strong>Municipio :</strong>
+		  <%= @basico_parroquia.municipio.nombre %>
+		</p>
+	</div>
 
-<%= link_to 'Edit', edit_basico_parroquia_path(@basico_parroquia) %> |
-<%= link_to 'Back', basico_parroquias_path %>
+ 
+</div>
+</div>
+
+
+
+
+
+

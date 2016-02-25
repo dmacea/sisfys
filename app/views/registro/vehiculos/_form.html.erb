@@ -1,0 +1,57 @@
+<%= form_for(@registro_vehiculo) do |f| %>
+  <% if @registro_vehiculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registro_vehiculo.errors.count, "error") %> prohibited this registro_vehiculo from being saved:</h2>
+
+      <ul>
+      <% @registro_vehiculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_id %><br>
+    <%= f.text_field :tipo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :modelo_id %><br>
+    <%= f.text_field :modelo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ano %><br>
+    <%= f.text_field :ano %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :placa %><br>
+    <%= f.text_field :placa %>
+  </div>
+  <div class="field">
+    <%= f.label :serialCarroceria %><br>
+    <%= f.text_field :serialCarroceria %>
+  </div>
+  <div class="field">
+    <%= f.label :serialMotor %><br>
+    <%= f.text_field :serialMotor %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente_id %><br>
+    <%= f.text_field :cliente_id %>
+  </div>
+  <div class="field">
+    <%= f.label :encargado %><br>
+    <%= f.text_field :encargado %>
+  </div>
+  <div class="field">
+    <%= f.label :dispositivo_id %><br>
+    <%= f.text_field :dispositivo_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

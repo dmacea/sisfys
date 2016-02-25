@@ -1,0 +1,21 @@
+<%= form_for(@basico_plan) do |f| %>
+  <% if @basico_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@basico_plan.errors.count, "error") %> prohibited this basico_plan from being saved:</h2>
+
+      <ul>
+      <% @basico_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

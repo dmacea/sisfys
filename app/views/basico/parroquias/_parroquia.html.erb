@@ -1,0 +1,9 @@
+ <tr>
+        <td><%= parroquia.nombre %></td>
+        <td><%= parroquia.municipio.estado.pais.nombre %></td>
+        <td><%= parroquia.municipio.estado.nombre %></td>
+        <td><%= parroquia.municipio.nombre %></td>
+        <td><%= link_to 'Show', parroquia %></td>
+        <td><%= link_to 'Edit', edit_basico_parroquia_path(parroquia) %></td>
+        <td><%= link_to 'Destroy', parroquia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

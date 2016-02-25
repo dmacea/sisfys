@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @registro_servicio.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @registro_servicio.descripcion %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @registro_servicio.valor %>
+</p>
+
+<p>
+  <strong>Impuesto:</strong>
+  <%= @registro_servicio.impuesto %>
+</p>
+
+<%= link_to 'Edit', edit_registro_servicio_path(@registro_servicio) %> |
+<%= link_to 'Back', registro_servicios_path %>

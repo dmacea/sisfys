@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Registro Vehiculos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Modelo</th>
+      <th>Ano</th>
+      <th>Color</th>
+      <th>Placa</th>
+      <th>Serialcarroceria</th>
+      <th>Serialmotor</th>
+      <th>Cliente</th>
+      <th>Encargado</th>
+      <th>Dispositivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registro_vehiculos.each do |registro_vehiculo| %>
+      <tr>
+        <td><%= registro_vehiculo.tipo %></td>
+        <td><%= registro_vehiculo.modelo %></td>
+        <td><%= registro_vehiculo.ano %></td>
+        <td><%= registro_vehiculo.color %></td>
+        <td><%= registro_vehiculo.placa %></td>
+        <td><%= registro_vehiculo.serialCarroceria %></td>
+        <td><%= registro_vehiculo.serialMotor %></td>
+        <td><%= registro_vehiculo.cliente %></td>
+        <td><%= registro_vehiculo.encargado %></td>
+        <td><%= registro_vehiculo.dispositivo %></td>
+        <td><%= link_to 'Show', registro_vehiculo %></td>
+        <td><%= link_to 'Edit', edit_registro_vehiculo_path(registro_vehiculo) %></td>
+        <td><%= link_to 'Destroy', registro_vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehiculo', new_registro_vehiculo_path %>

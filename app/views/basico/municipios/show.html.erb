@@ -1,14 +1,46 @@
+ 
+
+<div class="row">
+	<div class="col-md-4"  >
+	 <%= link_to 'Editar',edit_basico_municipio_path(@basico_municipio),class: "btn btn-default btn-sm" %> 
+	 <%= link_to 'Listado', basico_municipios_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+
+<h3>Municipios<small> detalle </small></h3>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @basico_municipio.nombre %>
-</p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @basico_municipio.estado %>
-</p>
+<div class="well">
+<div class="row">
+	<div class="col-md-6">
+		<p>
+		  <strong>Nombre:</strong>
+		  <%= @basico_municipio.nombre %>
+		</p>
+		<p>
+		  <strong>Pais :</strong>
+		  <%= @basico_municipio.estado.pais.nombre %>
+		</p>
+		<p>
+		  <strong>Estado :</strong>
+		  <%= @basico_municipio.estado.nombre %>
+		</p>
+	</div>
 
-<%= link_to 'Edit', edit_basico_municipio_path(@basico_municipio) %> |
-<%= link_to 'Back', basico_municipios_path %>
+	<div class="col-md-6">
+		<ul class="list-group">
+			<% @basico_municipio.parroquias.each do |muni| %>	
+				<li class="list-group-item"><%= muni.nombre %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+</div>
+
+
+
+
+

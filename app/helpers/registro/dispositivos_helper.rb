@@ -1,0 +1,2 @@
+module Registro::DispositivosHelper
+end

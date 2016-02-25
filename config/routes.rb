@@ -1,14 +1,51 @@
 Rails.application.routes.draw do
 
   namespace :registro do
-    resources :clientes
+    resources :cliente_servicio_detalles
   end
+  namespace :registro do
+    resources :cliente_servicios
+  end
+  namespace :registro do
+    resources :servicios
+  end
+  namespace :registro do
+    resources :vehiculos
+  end
+  namespace :registro do
+    resources :dispositivos
+  end
+  namespace :basico do
+    resources :modelos
+  end
+  namespace :basico do
+    resources :marcas
+  end
+  namespace :registro do
+    resources :lineas
+  end
+
+
+  namespace :registro do
+    resources :clientes
+    resources :vehiculos
+  end
+
   namespace :basico do
     resources :persona_juridicas
     resources :paises
-    resources :estados
-    resources :municipios
+    resources :estados do 
+      get :cargar_estados, on: :collection
+    end 
+    resources :municipios do
+      get :cargar_municipios , on: :collection
+    end 
     resources :parroquias
+    resources :marca_vehiculos
+    resources :modelo_vehiculos
+    resources :tipo_vehiculos
+    resources :operadoras
+    resources :planes
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

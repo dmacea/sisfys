@@ -1,19 +1,44 @@
+
+<div class="row">
+	<div class="col-md-4"  >
+	 <%= link_to 'Editar',edit_basico_estado_path(@basico_estado),class: "btn btn-default btn-sm" %> 
+	 <%= link_to 'Listado', basico_estados_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+
+<h3>Paises<small> detalle </small></h3>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @basico_estado.nombre %>
-</p>
 
-<p>
-  <strong>Codigo:</strong>
-  <%= @basico_estado.codigo %>
-</p>
+<div class="well">
+<div class="row">
+	<div class="col-md-6">
+		<p>
+		  <strong>Nombre:</strong>
+		  <%= @basico_estado.nombre %>
+		</p>
 
-<p>
-  <strong>Pais:</strong>
-  <%= @basico_estado.pais %>
-</p>
+		<p>
+		  <strong>Codigo:</strong>
+		  <%= @basico_estado.codigo %>
+		</p>
 
-<%= link_to 'Edit', edit_basico_estado_path(@basico_estado) %> |
-<%= link_to 'Back', basico_estados_path %>
+		<p>
+		  <strong>Pais:</strong>
+		  <%= @basico_estado.pais.nombre %>
+		</p>
+	</div>
+	<div class="col-md-6">
+		<ul class="list-group">
+			<% @basico_estado.municipios.each do |muni| %>	
+				<li class="list-group-item"><%= muni.nombre %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+</div>
+
+
+

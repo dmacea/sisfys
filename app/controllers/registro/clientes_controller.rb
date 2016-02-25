@@ -25,7 +25,8 @@ class Registro::ClientesController < ApplicationController
   # POST /registro/clientes.json
   def create
     @cliente = Registro::Cliente.new(registro_cliente_params)
-
+    puts @cliente.parroquia_id
+    puts @cliente.parroquia
     respond_to do |format|
       if @cliente.save
         format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
@@ -41,7 +42,7 @@ class Registro::ClientesController < ApplicationController
   # PATCH/PUT /registro/clientes/1.json
   def update
     respond_to do |format|
-      if @registro_cliente.update(registro_cliente_params)
+      if @registro_cliente.update(registro_cliente_params_edit)
         format.html { redirect_to @registro_cliente, notice: 'Cliente was successfully updated.' }
         format.json { render :show, status: :ok, location: @registro_cliente }
       else
@@ -69,6 +70,10 @@ class Registro::ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registro_cliente_params
-      params.require(:cliente).permit(:tipoIdentidad_id, :identidad, :nombres, :direccion, :parroquia_id, :email, :ping, :web, :twitter)
+      params.require(:registro_cliente).permit(:identidad,:nombres,:parroquia_id,:direccion,:telefono,:otroTelefono,:celular,:otroCelular,:email,:otroEmail,:twitter,:web,:ping)
+    end
+
+    def registro_cliente_params_edit
+      params.require(:registro_cliente).permit(:nombres,:parroquia_id,:direccion,:telefono,:otroTelefono,:celular,:otroCelular,:email,:otroEmail,:twitter,:web,:ping)
     end
 end

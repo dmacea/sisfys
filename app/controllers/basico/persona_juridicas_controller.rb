@@ -4,7 +4,7 @@ class Basico::PersonaJuridicasController < ApplicationController
   # GET /basico/persona_juridicas
   # GET /basico/persona_juridicas.json
   def index
-    @basico_persona_juridicas = Basico::PersonaJuridica.all
+    @basico_persona_juridicas = Basico::PersonaJuridica.search(params[:page], params[:search], params[:sort])
   end
 
   # GET /basico/persona_juridicas/1

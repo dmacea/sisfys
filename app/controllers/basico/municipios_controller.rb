@@ -4,7 +4,7 @@ class Basico::MunicipiosController < ApplicationController
   # GET /basico/municipios
   # GET /basico/municipios.json
   def index
-    @basico_municipios = Basico::Municipio.all
+    @municipios = Basico::Municipio.search(params[:page], params[:search], params[:sort])
   end
 
   # GET /basico/municipios/1
@@ -60,6 +60,14 @@ class Basico::MunicipiosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def cargar_municipios
+    @municipios = Basico::Municipio.select(:id,:nombre).where("estado_id=?",params[:estado_id]).collect { |m| [m.nombre,m.id]}
+    respond_to do |format|
+      format.js
+    end
+  end 
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,25 +1,55 @@
-<%= form_for(@basico_parroquia) do |f| %>
-  <% if @basico_parroquia.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@basico_parroquia.errors.count, "error") %> prohibited this basico_parroquia from being saved:</h2>
+ 
+ 
 
+<%= form_for(@basico_parroquia, html: {class:'form-horizontal', role:'form',id:"formulario"}) do |f| %>
+  <% if @basico_parroquia.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <ul>
-      <% @basico_parroquia.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @basico_parroquia.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <div class="form-group form-group-sm">
+    <%= f.label :nombre, class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+       <%= f.text_field :nombre, class: "form-control input-sm",required: "required",maxlength:"30"  %>
+    </div>  
+    
+    <% pais = @basico_parroquia.municipio.estado.pais unless @basico_parroquia.municipio.nil?
+      estado = @basico_parroquia.municipio.estado unless @basico_parroquia.municipio.nil?
+    %>
+
+    <%= label_tag :pais_id,:Pais,class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+     <%= select_tag "basico_parroquia[pais_id]",opciones_paises(pais),html_options={class: "form-control input-sm",prompt: "Seleccione ", data: {url: cargar_estados_basico_estados_path(:js)}, required: "required"} %>
+    </div> 
   </div>
-  <div class="field">
-    <%= f.label :municipio_id %><br>
-    <%= f.text_field :municipio_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group form-group-sm">
+    <%= label_tag :estado_id,:Estado,class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+     <%= select_tag "basico_parroquia[estado_id]",opciones_estados(estado,pais),html_options={class: "form-control input-sm",prompt: "Seleccione ",data: {url: cargar_municipios_basico_municipios_path(:js)}, required: "required"} %>
+    </div> 
+
+    <%=f.label :municipio_id,class:"col-md-1 control-label  " %>
+    <div class="col-md-3">
+      <%= f.select :municipio_id,opciones_municipios(@basico_parroquia.municipio,estado), {}, {class: "form-control input-sm",required: "required",prompt: "Seleccione "} %>
+    </div>
+  </div>  
+
+  <div class="form-group form-group-sm">
+    <div class="col-md-1 col-md-offset-7" align="right">
+      <%= submit_tag "Guardar" , class: "btn btn-primary btn-sm"  %>
+    </div>
   </div>
 <% end %>
+
+ 
+
+

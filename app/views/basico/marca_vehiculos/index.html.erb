@@ -1,0 +1,27 @@
+ 
+
+<div class="row">
+    <div class="col-md-4"  >
+      <%= link_to 'Nuevo', new_basico_marca_vehiculo_path,
+        class: "btn btn-default btn-sm" %>
+    </div>
+    <div class="col-md-8" align="right">
+        <%= buscar(basico_marca_vehiculos_path,["Nombre"]) %>
+    </div>
+</div>
+
+<h3>Marcas <small> listado</small></h3>
+<p id="notice"><%= notice %></p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <%=table_head([{title:"Nombre"}]) %>
+       <tbody>
+        <%= render  @basico_marca_vehiculos %>
+        </tbody>
+    </table>
+</div> 
+
+<%= paginador(@basico_marca_vehiculos) %>
+
+

@@ -1,0 +1,29 @@
+<%= form_for(@registro_cliente_servicio_detalle) do |f| %>
+  <% if @registro_cliente_servicio_detalle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registro_cliente_servicio_detalle.errors.count, "error") %> prohibited this registro_cliente_servicio_detalle from being saved:</h2>
+
+      <ul>
+      <% @registro_cliente_servicio_detalle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :servicio_id %><br>
+    <%= f.text_field :servicio_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

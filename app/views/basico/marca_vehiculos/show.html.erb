@@ -1,0 +1,32 @@
+ 
+ 
+<div class="row">
+	<div class="col-md-4"  >
+	 <%= link_to 'Editar', edit_basico_marca_vehiculo_path(@basico_marca_vehiculo) ,class: "btn btn-default btn-sm" %> 
+	 <%= link_to 'Listado', basico_marca_vehiculos_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+
+<h3>Marcas <small> detalle </small></h3>
+<p id="notice"><%= notice %></p>
+
+
+<div class="well">
+<div class="row">
+	<div class="col-md-6">
+		<p>
+		  <strong>Nombre:</strong>
+		  <%= @basico_marca_vehiculo.nombre %>
+		</p>
+ 
+	</div>
+ 
+</div>
+</div>
+
+
+
+
+

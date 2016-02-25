@@ -1,25 +1,48 @@
-<%= form_for(@basico_municipio) do |f| %>
-  <% if @basico_municipio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@basico_municipio.errors.count, "error") %> prohibited this basico_municipio from being saved:</h2>
+ 
+ 
 
+<%= form_for(@basico_municipio, html: {class:'form-horizontal', role:'form',id:"formulario"}) do |f| %>
+  <% if @basico_municipio.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <ul>
-      <% @basico_municipio.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @basico_municipio.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <div class="form-group form-group-sm">
+    <%= f.label :nombre, class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+       <%= f.text_field :nombre, class: "form-control input-sm",required: "required",maxlength:"30"  %>
+    </div>
+
+    <%= label_tag :pais_id,:Pais,class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+     <% pais = @basico_municipio.estado.pais unless @basico_municipio.estado.nil? %>
+     <%= select_tag "basico_municipio[pais_id]",opciones_paises(pais), prompt: "Seleccione ",class: "form-control input-sm", data: {url: cargar_estados_basico_estados_path(:js)},required: "required" %>
+    </div> 
   </div>
-  <div class="field">
-    <%= f.label :estado_id %><br>
-    <%= f.text_field :estado_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group form-group-sm">
+    <%=f.label :estado,class:"col-md-1 control-label  col-md-offset-4" %>
+    <div class="col-md-3">
+      <%= f.select :estado_id,opciones_estados(@basico_municipio.estado,pais), {prompt: "Seleccione "}, {class: "form-control input-sm",required: "required" ,data: {url: cargar_estados_basico_estados_path(:js)}} %>
+    </div>
+  </div>  
+
+  <div class="form-group form-group-sm">
+    <div class="col-md-1 col-md-offset-7" align="right">
+      <%= submit_tag "Guardar" , class: "btn btn-primary btn-sm"  %>
+    </div>
   </div>
 <% end %>
+
+ 
+
+
+

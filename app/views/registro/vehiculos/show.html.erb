@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @registro_vehiculo.tipo %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @registro_vehiculo.modelo %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @registro_vehiculo.ano %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @registro_vehiculo.color %>
+</p>
+
+<p>
+  <strong>Placa:</strong>
+  <%= @registro_vehiculo.placa %>
+</p>
+
+<p>
+  <strong>Serialcarroceria:</strong>
+  <%= @registro_vehiculo.serialCarroceria %>
+</p>
+
+<p>
+  <strong>Serialmotor:</strong>
+  <%= @registro_vehiculo.serialMotor %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @registro_vehiculo.cliente %>
+</p>
+
+<p>
+  <strong>Encargado:</strong>
+  <%= @registro_vehiculo.encargado %>
+</p>
+
+<p>
+  <strong>Dispositivo:</strong>
+  <%= @registro_vehiculo.dispositivo %>
+</p>
+
+<%= link_to 'Edit', edit_registro_vehiculo_path(@registro_vehiculo) %> |
+<%= link_to 'Back', registro_vehiculos_path %>

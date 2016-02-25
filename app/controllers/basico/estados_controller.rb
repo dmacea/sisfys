@@ -62,6 +62,13 @@ class Basico::EstadosController < ApplicationController
     end
   end
 
+  def cargar_estados
+    @estados = Basico::Estado.select(:id,:nombre).where("pais_id=?",params[:pais_id]).collect { |estado| [estado.nombre,estado.id]}
+    respond_to do |format|
+      format.js
+    end
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_basico_estado

@@ -1,0 +1,37 @@
+  
+<%= form_for(@basico_modelo_vehiculo, html: {class:'form-horizontal', role:'form',id:"formulario"}) do |f| %>
+  <% if @basico_modelo_vehiculo.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <ul>
+        <% @basico_modelo_vehiculo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group form-group-sm">
+    <%= f.label :nombre, class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+       <%= f.text_field :nombre, class: "form-control input-sm",required: "required",maxlength:"30"  %>
+    </div>
+    <%=f.label :marcaVehiculo_id,"Marca",class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+      <%= f.select :marcaVehiculo_id,opciones_marca_vehiculos(@basico_modelo_vehiculo.marcaVehiculo), {}, {class: "form-control input-sm",required: "required" } %>
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <div class="col-md-1 col-md-offset-7" align="right">
+      <%= submit_tag "Guardar" , class: "btn btn-primary btn-sm"  %>
+    </div>
+  </div>
+<% end %>
+
+ 
+
+
+

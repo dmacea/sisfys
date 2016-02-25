@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Servicio:</strong>
+  <%= @registro_cliente_servicio_detalle.servicio %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @registro_cliente_servicio_detalle.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @registro_cliente_servicio_detalle.estado %>
+</p>
+
+<%= link_to 'Edit', edit_registro_cliente_servicio_detalle_path(@registro_cliente_servicio_detalle) %> |
+<%= link_to 'Back', registro_cliente_servicio_detalles_path %>

@@ -8,6 +8,7 @@
 
    inflect.irregular 'pais', 'paises'
    inflect.irregular 'parroquia', 'parroquias'
+   inflect.irregular 'plan', 'planes'
 
    #inflect.singular  'pais', 'paises'
    #inflect.plural    'paises', 'paises'

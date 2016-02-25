@@ -1,0 +1,33 @@
+ 
+
+
+<div class="row">
+	<div class="col-md-4"  >
+	 <%= link_to 'Editar', edit_basico_operadora_path(@basico_operadora) ,class: "btn btn-default btn-sm" %> 
+	 <%= link_to 'Listado', basico_operadoras_path, class: "btn btn-default btn-sm" %>
+	</div>
+	<div class="col-md-8" align="right">
+	</div>
+</div>
+<h3>Paises<small> detalle </small></h3>
+<p id="notice"><%= notice %></p>
+
+
+<div class="well">
+<div class="row">
+	<div class="col-md-6">
+		<p>
+		  <strong>Nombre:</strong>
+		    <%= @basico_operadora.nombre %>
+ 		</p>
+ 	 
+	</div>
+	<div class="col-md-6">
+		<ul class="list-group">
+			 
+		</ul>
+	</div>
+</div>
+</div>
+
+

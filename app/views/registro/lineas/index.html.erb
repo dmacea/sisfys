@@ -1,0 +1,25 @@
+ 
+<div class="row">
+    <div class="col-md-4"  >
+      <%= link_to 'Nuevo', new_registro_linea_path,
+        class: "btn btn-default btn-sm" %>
+    </div>
+    <div class="col-md-8" align="right">
+        <%= buscar(basico_paises_path,["Operadora","Serial","Numero","Plan","Dia de Corte"]) %>
+    </div>
+</div>
+
+<h3>Lineas <small> listado</small></h3>
+<p id="notice"><%= notice %></p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <%=table_head([{title:"Operadora"},{title:"Serial"},{title:"Numero"},{title:"Plan"},{title:"Dia de Corte "}]) %>
+       <tbody>
+        <%= render  @registro_lineas %>
+        </tbody>
+    </table>
+</div> 
+
+<%= paginador(@registro_lineas) %>
+

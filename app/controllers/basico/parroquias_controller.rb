@@ -4,7 +4,7 @@ class Basico::ParroquiasController < ApplicationController
   # GET /basico/parroquias
   # GET /basico/parroquias.json
   def index
-    @basico_parroquias = Basico::Parroquia.all
+    @parroquias = Basico::Parroquia.search(params[:page], params[:search], params[:sort])
   end
 
   # GET /basico/parroquias/1

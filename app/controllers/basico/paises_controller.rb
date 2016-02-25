@@ -25,7 +25,6 @@ class Basico::PaisesController < ApplicationController
   # POST /basico/paises.json
   def create
     @basico_pais = Basico::Pais.new(basico_pais_params)
-
     respond_to do |format|
       if @basico_pais.save
         format.html { redirect_to @basico_pais, notice: 'Pais was successfully created.' }
@@ -55,8 +54,10 @@ class Basico::PaisesController < ApplicationController
   # DELETE /basico/paises/1.json
   def destroy
     @basico_pais.destroy
+    mensaje = "Pais was successfully destroyed."
+    mensaje = @basico_pais.errors.full_messages.join(", ") if @basico_pais.errors.size != 0  
     respond_to do |format|
-      format.html { redirect_to basico_paises_url, notice: 'Pais was successfully destroyed.' }
+      format.html { redirect_to basico_paises_url, notice: mensaje }
       format.json { head :no_content }
     end
   end

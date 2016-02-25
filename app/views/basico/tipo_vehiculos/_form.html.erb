@@ -1,0 +1,34 @@
+ 
+ 
+
+<%= form_for(@basico_tipo_vehiculo, html: {class:'form-horizontal', role:'form',id:"formulario"}) do |f| %>
+  <% if @basico_tipo_vehiculo.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <ul>
+        <% @basico_tipo_vehiculo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group form-group-sm">
+    <%= f.label :nombre, class:"col-md-1 control-label" %>
+    <div class="col-md-3">
+       <%= f.text_field :nombre, class: "form-control input-sm",required: "required",maxlength:"50"  %>
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <div class="col-md-1 col-md-offset-5" align="right">
+      <%= submit_tag "Guardar" , class: "btn btn-primary btn-sm"  %>
+    </div>
+  </div>
+<% end %>
+
+ 
+
+

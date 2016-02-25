@@ -1,11 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  codigo: MyString
-  pais_id: 
+  id: 1 
+  nombre: Lara
+  codigo: 251
+  pais_id: 01
 
 two:
-  nombre: MyString
-  codigo: MyString
-  pais_id: 
+  id: 2
+  nombre: Maracay
+  codigo: 255
+  pais_id:  01
+

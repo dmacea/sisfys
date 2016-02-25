@@ -1,0 +1,7 @@
+      <tr>
+        <td><%= modelo_vehiculo.nombre %></td>
+        <td><%= modelo_vehiculo.marcaVehiculo.nombre %></td>
+        <td><%= link_to 'Show', modelo_vehiculo %></td>
+        <td><%= link_to 'Edit', edit_basico_modelo_vehiculo_path(modelo_vehiculo) %></td>
+        <td><%= link_to 'Destroy', modelo_vehiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

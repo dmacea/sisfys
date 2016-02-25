@@ -1,0 +1,2 @@
+module Registro::ClienteServiciosHelper
+end

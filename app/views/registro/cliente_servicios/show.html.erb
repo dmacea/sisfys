@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @registro_cliente_servicio.cliente %>
+</p>
+
+<p>
+  <strong>Servicio:</strong>
+  <%= @registro_cliente_servicio.servicio %>
+</p>
+
+<p>
+  <strong>Dispositivo:</strong>
+  <%= @registro_cliente_servicio.dispositivo %>
+</p>
+
+<p>
+  <strong>Pagaplan:</strong>
+  <%= @registro_cliente_servicio.pagaPlan %>
+</p>
+
+<p>
+  <strong>Fechainicio:</strong>
+  <%= @registro_cliente_servicio.fechaInicio %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @registro_cliente_servicio.estado %>
+</p>
+
+<%= link_to 'Edit', edit_registro_cliente_servicio_path(@registro_cliente_servicio) %> |
+<%= link_to 'Back', registro_cliente_servicios_path %>

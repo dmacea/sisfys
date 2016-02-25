@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @registro_dispositivo.tipo %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @registro_dispositivo.modelo %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @registro_dispositivo.serial %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @registro_dispositivo.email %>
+</p>
+
+<p>
+  <strong>Linea:</strong>
+  <%= @registro_dispositivo.linea %>
+</p>
+
+<%= link_to 'Edit', edit_registro_dispositivo_path(@registro_dispositivo) %> |
+<%= link_to 'Back', registro_dispositivos_path %>
